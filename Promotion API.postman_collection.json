@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "439ca2dc-bd97-4b13-ad77-5f91e3c883b7",
+		"name": "Promotion API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Promo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"test promo\",\n\t\"code\": \"PROMOTEST01\",\n\t\"quota\": 3,\n\t\"percentage\": 10,\n\t\"amount\": \"\",\n\t\"startDate\": \"2020-02-16 00:04:05\",\n\t\"endDate\": \"2020-02-16 23:59:05\",\n\t\"minRoom\": 2,\n\t\"minNight\": 1,\n\t\"checkinDays\": \"Sunday\",\n\t\"bookingDays\": null,\n\t\"bookingHourStart\": null,\n\t\"bookingHourEnd\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/promo"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Promotion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/promo"
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Promotion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"rooms\":[\n\t\t{\n\t\t\t\"date\":\"2020-02-15 12:00:00\",\n\t\t\t\"room\": \"Room A - Standard\",\n\t\t\t\"price\": 120000,\n\t\t\t\"night\": null,\n\t\t\t\"qty\": 3\n\t\t},\n\t\t{\n\t\t\t\"date\":\"2020-02-15 12:00:00\",\n\t\t\t\"room\": \"Room A - Standard\",\n\t\t\t\"price\": 150000,\n\t\t\t\"night\": 2,\n\t\t\t\"qty\": null\n\t\t},\n\t\t{\n\t\t\t\"date\":\"2020-02-15 12:00:00\",\n\t\t\t\"room\": \"Room A - Standard\",\n\t\t\t\"price\": 180000,\n\t\t\t\"night\": 1,\n\t\t\t\"qty\": 2\n\t\t},\n\t\t{\n\t\t\t\"date\":\"2020-02-16 12:00:00\",\n\t\t\t\"room\": \"Room A - Standard\",\n\t\t\t\"price\": 220000,\n\t\t\t\"night\": 1,\n\t\t\t\"qty\": 2\n\t\t},\n\t\t{\n\t\t\t\"date\":\"2020-02-17 12:00:00\",\n\t\t\t\"room\": \"Room A - Standard\",\n\t\t\t\"price\": 220000,\n\t\t\t\"night\": 1,\n\t\t\t\"qty\": 2\n\t\t}],\n\t\"totalPrice\":2000000,\n\t\"code\":\"PROMOTEST01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/promo/apply"
+			},
+			"response": []
+		},
+		{
+			"name": "Promo Distribute",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8000/promo/distribute"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
