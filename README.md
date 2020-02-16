@@ -1,7 +1,9 @@
 # Simple Promotion API
 
 Promotion Service API. Create Promo, Calculate promo price, etc
+
 Design database and flowchart in this folder `/_hotel-management-system-design`
+
 Postman Collection: `Promotion API.postman_collection.json`
 
 ## Getting Started
